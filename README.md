@@ -1,4 +1,32 @@
-Hi there,
-Here I have created a portfolio of my details and I have created this website by using only HTML and CSS
-This is not a complete output further I will add javascript to it. Just to be kept in the records I have created a repository now.
-and also I have to make it android friendly (at the phone's resolution)
+# Anurag Merugu — Portfolio
+
+A personal portfolio site: dark theme with red accents, a full-bleed hero, and a layout that works on desktop and on phones.
+
+Built with plain **HTML, CSS and JavaScript**. There's no build step and nothing to install.
+
+## Run it
+
+Open `index.html` in a browser. To serve it locally instead:
+
+```bash
+python3 -m http.server 8000   # then visit http://localhost:8000
+```
+
+To host it for free, turn on **GitHub Pages** (Settings → Pages → deploy from branch, root folder).
+
+## Structure
+
+```
+index.html              page markup (all content lives here)
+assets/css/style.css    styles and responsive breakpoints
+assets/js/main.js       mobile menu, scroll reveal, stat counters, active nav link
+assets/img/             portrait (background removed) and project screenshots
+```
+
+## Updating content
+
+All content is in `index.html`:
+
+- **Hero stats**: the `data-count` numbers (the count-up animation reads these)
+- **Experience**: one `<li class="job">` per role. Copy a block to add a new job.
+- **Projects**: copy an `<article class="project">` block, drop a 16:10 screenshot into `assets/img/`, and update the link and text. Project 03 is a "Coming Soon" placeholder.
