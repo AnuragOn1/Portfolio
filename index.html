@@ -1,80 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-          <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Document</title>
-          <link rel="stylesheet" href="style.css">
-          <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anurag Mergu | Web Developer</title>
+  <meta name="description" content="Portfolio of Anurag Mergu — web developer building clean, responsive and user-focused websites.">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:title" content="Anurag Mergu | Web Developer">
+  <meta property="og:description" content="Turning ideas into powerful digital experiences.">
+  <meta property="og:image" content="assets/img/anurag.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial Black,Arial' font-weight='900' font-size='38' fill='%23e11d2a'%3EA%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-          <div id="navi-bar-container">
-          <ul id="navi-bar">
-          <li type="none" class="name">Anurag</li>          
-          <li type="none" style="color: yellow;">Home</li>
-          <li type="none">About</li>
-          <li type="none">Skills</li>
-          <li type="none">Projects</li>
-          <li type="none">Contact</li>
-          </ul> 
+
+  <!-- Icon sprite (stroke icons, use with <svg class="i"><use href="#i-name"/></svg>) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 32 24"><path d="M2 12h27M20 4l9 8-9 8"/></symbol>
+      <symbol id="i-arrow-short" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/></symbol>
+      <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.3 1.1 2.2h5c0-.9.4-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+      <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1-4L16 5a2.1 2.1 0 0 1 3 3L8 19l-4 1zM14 7l3 3"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3L3 10.5l7 3 3 7L21 3zM10 13.5L21 3"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.1-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.9 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.4v.1M11.5 17v-6.5M11.5 13.3c0-1.7 1.1-2.8 2.5-2.8s2.4 1 2.4 2.8V17"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar" id="top">
+    <a href="#top" class="topbar__brand">
+      <span class="accent">Web Developer</span>
+      <span>Digital Creator</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="topbar__right">
+      <span class="topbar__status">Open to work <i class="spark" aria-hidden="true">✦</i></span>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <h1 class="hero__word" aria-hidden="true">PORTFOLIO</h1>
+
+      <div class="hero__photo">
+        <img src="assets/img/anurag.webp" alt="Portrait of Anurag Mergu" width="900" height="936" fetchpriority="high">
+      </div>
+
+      <div class="hero__intro reveal">
+        <p class="script">Hello, I'm</p>
+        <h2 class="hero__name">Anurag<br>Mergu</h2>
+        <p class="hero__role">Web Developer &amp;<br>Python Programmer</p>
+        <p class="hero__text">
+          I design and build clean, user-focused websites that combine creativity with
+          strategy. Passionate about tidy code, smooth interactions, and the small
+          details that make a difference.
+        </p>
+        <p class="hero__avail"><svg class="i" aria-hidden="true"><use href="#i-globe"/></svg> Available worldwide</p>
+      </div>
+
+      <div class="hero__side reveal">
+        <div class="hero__badge">
+          <span class="hero__badge-icon" aria-hidden="true">✦</span>
+          <span>Turning ideas<br>into powerful<br>digital experiences.</span>
+        </div>
+
+        <!-- EDIT: update these numbers as you grow -->
+        <ul class="stats">
+          <li><strong data-count="5">5</strong><sup>+</sup><span>Core<br>technologies</span></li>
+          <li><strong data-count="3">3</strong><sup>+</sup><span>Projects<br>built</span></li>
+          <li><strong data-count="100">100</strong><sup>%</sup><span>Eager to<br>learn</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="section__head">
+        <h2 class="section__title">Selected Projects</h2>
+        <span class="section__line" aria-hidden="true"></span>
+        <a class="section__link" href="https://github.com/AnuragOn1" target="_blank" rel="noopener">
+          View all projects <svg class="i i--arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+
+      <div class="projects">
+        <article class="project reveal">
+          <a class="project__thumb" href="https://github.com/AnuragOn1" target="_blank" rel="noopener">
+            <img src="assets/img/project-youtube-clone.webp" alt="YouTube clone project screenshot" loading="lazy" width="960" height="467">
+          </a>
+          <div class="project__meta">
+            <span class="project__num">01</span>
+            <div>
+              <h3>YouTube Clone</h3>
+              <p>HTML · CSS layout</p>
+            </div>
+            <svg class="i project__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
           </div>
-          <div>
-                    <h1 id="name-title">Hi,I am <strong>Anurag</strong></h1>
-                    <h1 id="description">Recent graduate with a strong academic foundation and eagerness to learn, seeking an entry-level
-                              <strong>position to contribute accuracy and efficiency.</strong></h1>
+        </article>
+
+        <article class="project reveal">
+          <a class="project__thumb" href="https://github.com/AnuragOn1/Portfolio" target="_blank" rel="noopener">
+            <img src="assets/img/project-portfolio.webp" alt="This portfolio website screenshot" loading="lazy" width="960" height="600">
+          </a>
+          <div class="project__meta">
+            <span class="project__num">02</span>
+            <div>
+              <h3>Personal Portfolio</h3>
+              <p>HTML · CSS · JavaScript</p>
+            </div>
+            <svg class="i project__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
           </div>
-          
-          <div id="img-container1">
-                    <img class="image" src="/portfolio/profile.jpg" >
+        </article>
+
+        <!-- EDIT: replace this card with your next project -->
+        <article class="project reveal">
+          <a class="project__thumb project__thumb--soon" href="https://github.com/AnuragOn1" target="_blank" rel="noopener">
+            <span class="soon">
+              <span class="soon__big">Next<br>Project</span>
+              <span class="soon__small">In the works — stay tuned</span>
+            </span>
+          </a>
+          <div class="project__meta">
+            <span class="project__num">03</span>
+            <div>
+              <h3>Coming Soon</h3>
+              <p>Python · Web App</p>
+            </div>
+            <svg class="i project__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
           </div>
-          <div id="aboutme-container">
-                    <h1 id="aboutme">About me</h1>
-                    <h1 id="description-abtme">Myself  recent graduate with a strong academic background and a genuine enthusiasm for learning. 
-                    I'm eager to leverage my skills and knowledge to contribute to a dynamic team environment.
-                    I possess a well-rounded foundation in web development, including experience in both front-end and back-end technologies.
-                    I'm a highly motivated and detail-oriented individual with a commitment to accuracy and efficiency. 
-                    I'm confident that my ability to learn quickly, collaborate effectively, and think critically will make me a valuable asset to your organization.
-          </h1>
-          <button id="dwnld-cv">Download CV</button>
-          
-          </div>
-          <div id="skills-container">
-                    <h1 id="header-skills">Technical Skills <hr style="width: 100%; margin-top: -10px; background-color: yellow; font-weight: bold; height: 7px; border: none;"></h1>
-          </div>
-          <div id="skills">
-                    <h1>Front-end</h1>
-                    <div id="img-container">
-                    <img id="img1" src="/portfolio/html.png" >
-                    <img id="img2" src="/portfolio/css.png" >
-                    <img id="img3" src="/portfolio/js.png">
-                    </div>
-                    <h1 style="top: 2120px;">Back-end</h1>
-                    <div style="top: 2210px;" id="img-container">
-                              <img  src="/portfolio/python.png">
-                    </div>
-                   
-          </div>
-          <div id="projects">
-                    <h1 id="projects">Projects <hr style="width: 100%; margin-top: -10px; background-color: white; font-weight: bold; height: 7px; border: none;"></h1>
-                    <div id="img-container-2">
-                              <img src="/portfolio/ytproject.png">
-                              <h2>Youtube-colne</h2>
-                    </div>
-          </div>
-          <div id="container">
-                    <div id="contact">Contact:</div>
-                    <div id="button-container">
-                    <i style="font-size: 30px; margin-right: 20px;" class="fa-solid fa-envelope"></i>
-                    <i style="font-size:30px ; margin-right: 20px;" class="fa-solid fa-phone"></i>
-                    <a href="https://www.linkedin.com/in/anuragmergu/" class="linkdn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/AnuragOn1" class="github"><i class="fa-brands fa-github"></i></a>
-                    </div>
-          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS / PROCESS / QUOTE ============ -->
+    <section class="trio">
+      <div class="trio__col" id="skills">
+        <h2 class="section__title">Education &amp; Skills</h2>
+
+        <h3 class="label">Education</h3>
+        <!-- EDIT: add your real degree, college and years -->
+        <ul class="edu">
+          <li>
+            <div><strong>Bachelor's Degree</strong><span>Your College / University</span></div>
+            <time>20XX – 20XX</time>
+          </li>
+          <li>
+            <div><strong>Web Development</strong><span>Self-taught · Online courses</span></div>
+            <time>Ongoing</time>
+          </li>
+        </ul>
+
+        <h3 class="label">Skills</h3>
+        <ul class="chips">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>Responsive Design</li>
+          <li>Git &amp; GitHub</li>
+          <li>UI Design</li>
+          <li>Flexbox / Grid</li>
+          <li>Problem Solving</li>
+        </ul>
+      </div>
+
+      <div class="trio__col" id="process">
+        <h2 class="section__title">Work Process</h2>
+        <ol class="steps">
+          <li class="reveal">
+            <span class="steps__num">01</span>
+            <span class="steps__icon"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg></span>
+            <div><h4>Discover</h4><p>Understanding goals, audience, and project requirements.</p></div>
+          </li>
+          <li class="reveal">
+            <span class="steps__num">02</span>
+            <span class="steps__icon"><svg class="i" aria-hidden="true"><use href="#i-bulb"/></svg></span>
+            <div><h4>Ideate</h4><p>Planning, wireframing, and shaping the right concept.</p></div>
+          </li>
+          <li class="reveal">
+            <span class="steps__num">03</span>
+            <span class="steps__icon"><svg class="i" aria-hidden="true"><use href="#i-pen"/></svg></span>
+            <div><h4>Design</h4><p>Crafting a visual design with a focus on user experience.</p></div>
+          </li>
+          <li class="reveal">
+            <span class="steps__num">04</span>
+            <span class="steps__icon"><svg class="i" aria-hidden="true"><use href="#i-code"/></svg></span>
+            <div><h4>Develop</h4><p>Building fast, responsive, and accessible websites.</p></div>
+          </li>
+          <li class="reveal">
+            <span class="steps__num">05</span>
+            <span class="steps__icon"><svg class="i" aria-hidden="true"><use href="#i-send"/></svg></span>
+            <div><h4>Deliver</h4><p>Testing, optimizing, and launching with care.</p></div>
+          </li>
+        </ol>
+      </div>
+
+      <aside class="quote">
+        <span class="quote__mark" aria-hidden="true">“</span>
+        <blockquote>Good design is not just how it looks, but how it works.</blockquote>
+        <p class="quote__sign">Anurag</p>
+        <p class="quote__cta">Let's create<br>something great<br>together.</p>
+        <span class="spark" aria-hidden="true">✦</span>
+      </aside>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="contact__intro reveal">
+        <h2 class="contact__title">Let's work<br>together <span class="spark">✦</span></h2>
+        <p>I'm currently open to new opportunities and collaborations. Let's create something amazing that drives results.</p>
+        <a class="pill" href="#contact-list"><span class="pill__ico"><svg class="i" aria-hidden="true"><use href="#i-arrow-short"/></svg></span> Available for work</a>
+      </div>
+
+      <!-- EDIT: put in your real email / phone / city -->
+      <ul class="contact__list reveal" id="contact-list">
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg></span><a href="mailto:your.email@example.com">your.email@example.com</a></li>
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg></span><a href="https://www.linkedin.com/in/anuragmergu/" target="_blank" rel="noopener">linkedin.com/in/anuragmergu</a></li>
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-github"/></svg></span><a href="https://github.com/AnuragOn1" target="_blank" rel="noopener">github.com/AnuragOn1</a></li>
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg></span><span>India</span></li>
+      </ul>
+
+      <div class="laptop reveal" aria-hidden="true">
+        <div class="laptop__screen">
+          <img src="assets/img/project-portfolio.webp" alt="" loading="lazy">
+        </div>
+        <div class="laptop__base"></div>
+        <div class="mug"><span>A</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year">2026</span> Anurag Mergu. Designed &amp; built with care.</p>
+    <a href="#top" class="footer__top" aria-label="Back to top"><svg class="i" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
