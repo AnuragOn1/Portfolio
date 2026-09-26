@@ -73,7 +73,10 @@
       <div class="hero__intro reveal">
         <p class="script">Hello, I'm</p>
         <h2 class="hero__name">Anurag<br>Merugu</h2>
-        <p class="hero__role">Web Developer &amp;<br>Technical Client Lead</p>
+        <!-- EDIT: the typing effect cycles through data-words -->
+        <p class="hero__role" aria-label="Web Developer and Technical Client Lead">
+          <span class="typed" data-words='["Web Developer", "Technical Client Lead", "Code Reviewer", "AI Automation Enthusiast"]' aria-hidden="true">Web Developer</span><span class="caret" aria-hidden="true"></span>
+        </p>
         <p class="hero__text">
           I build clean, responsive websites and work where code meets clients:
           reviewing Python, JavaScript, React and Django deliverables, automating

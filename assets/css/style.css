@@ -202,6 +202,16 @@ h1, h2, h3, h4, p { margin: 0; }
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
+.hero__role { min-height: 1.25em; white-space: nowrap; }
+.caret {
+  display: inline-block;
+  width: 2px; height: 1em;
+  margin-left: 4px;
+  vertical-align: -0.12em;
+  background: var(--red);
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
 .hero__text { margin-top: 14px; color: #bdbdbd; font-size: 14px; }
 .hero__avail {
   margin-top: 22px;
@@ -225,7 +235,7 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 
 .stats li {
-  display: flex; align-items: center; gap: 4px;
+  display: flex; align-items: center; gap: 0;
   padding: 16px 0;
   border-bottom: 1px solid var(--line);
 }
@@ -238,7 +248,7 @@ h1, h2, h3, h4, p { margin: 0; }
   line-height: 1;
   font-variant-numeric: tabular-nums;
 }
-.stats sup { color: var(--red); font-weight: 700; font-size: 24px; top: -0.55em; margin-left: 2px; }
+.stats sup { color: var(--red); font-weight: 700; font-size: 24px; top: -0.55em; margin-left: 3px; }
 .stats span {
   margin-left: auto;
   width: 110px;
