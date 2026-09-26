@@ -2,8 +2,6 @@
 (function () {
   "use strict";
 
-  document.documentElement.classList.add("js");
-
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Footer year
@@ -80,6 +78,32 @@
     };
     setTimeout(step, 2200); // start after the first word has been on screen for a moment
   }
+
+  // Hero photo: fade into focus every time it scrolls back into view
+  const photo = document.querySelector(".hero__photo");
+  if (photo && "IntersectionObserver" in window) {
+    new IntersectionObserver(([entry]) => {
+      photo.classList.toggle("is-visible", entry.isIntersecting);
+    }, { threshold: 0.2 }).observe(photo);
+  } else if (photo) {
+    photo.classList.add("is-visible");
+  }
+
+  // Back-to-top arrow: show once the visitor is near the bottom of the page
+  const toTop = document.getElementById("toTop");
+  const updateToTop = () => {
+    const fromBottom = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+    toTop.classList.toggle("is-shown", fromBottom < 500 && window.scrollY > 300);
+  };
+  updateToTop();
+
+  // "#top" points at the fixed header, which the browser won't scroll to, so scroll manually
+  document.querySelectorAll('a[href="#top"]').forEach((a) => a.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  }));
+  window.addEventListener("scroll", updateToTop, { passive: true });
+  window.addEventListener("resize", updateToTop);
 
   // Highlight the nav link for the section in view
   const links = [...nav.querySelectorAll("a")];
