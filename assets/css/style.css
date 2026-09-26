@@ -346,6 +346,14 @@ h1, h2, h3, h4, p { margin: 0; }
   transition: border-color 0.25s, background 0.25s, color 0.25s;
 }
 .chips li:hover { border-color: var(--red); background: rgba(225, 29, 42, 0.12); color: #fff; }
+.chips__title {
+  margin: 20px 0 10px;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.label + .chips__title { margin-top: 0; }
 
 .steps { margin-top: 30px; position: relative; }
 .steps li {
