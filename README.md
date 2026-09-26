@@ -1,4 +1,4 @@
-# Anurag Mergu — Portfolio
+# Anurag Merugu — Portfolio
 
 A personal portfolio site: dark theme with red accents, a full-bleed hero, and a layout that works on desktop and on phones.
 
@@ -23,13 +23,10 @@ assets/js/main.js       mobile menu, scroll reveal, stat counters, active nav li
 assets/img/             portrait (background removed) and project screenshots
 ```
 
-## Things to personalise
+## Updating content
 
-Search `index.html` for `EDIT:` comments:
+All content is in `index.html`:
 
-- **Education**: degree, college, years
-- **Contact**: email address (currently a placeholder) and city
-- **Stats** in the hero: the numbers and labels
-- **Project 03**: replace the "Coming Soon" card with your next project
-
-To add a project, copy one `<article class="project">` block, drop a 16:10 screenshot into `assets/img/`, and update the link and text.
+- **Hero stats**: the `data-count` numbers (the count-up animation reads these)
+- **Experience**: one `<li class="job">` per role. Copy a block to add a new job.
+- **Projects**: copy an `<article class="project">` block, drop a 16:10 screenshot into `assets/img/`, and update the link and text. Project 03 is a "Coming Soon" placeholder.
