@@ -32,7 +32,10 @@
     const target = Number(el.dataset.count);
     if (reduceMotion) { el.textContent = target; return; }
     // Lock the width to the final number so the "+" doesn't jump around while counting
+    cancelAnimationFrame(el._raf);
+    el.textContent = target;
     el.style.display = "inline-block";
+    el.style.minWidth = "";
     el.style.minWidth = el.getBoundingClientRect().width + "px";
     el.textContent = 0;
     const duration = 2000;
@@ -40,9 +43,9 @@
     const tick = (now) => {
       const t = Math.min((now - start) / duration, 1);
       el.textContent = Math.round(target * (1 - Math.pow(1 - t, 2)));
-      if (t < 1) requestAnimationFrame(tick);
+      if (t < 1) el._raf = requestAnimationFrame(tick);
     };
-    requestAnimationFrame(tick);
+    el._raf = requestAnimationFrame(tick);
   };
 
   // Reveal elements as they enter the viewport
@@ -52,11 +55,18 @@
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add("is-visible");
-        entry.target.querySelectorAll("[data-count]").forEach(countUp);
         io.unobserve(entry.target);
       });
     }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
     revealTargets.forEach((el) => io.observe(el));
+
+    // Stats recount from 0 every time they scroll back into view
+    const stats = document.querySelector(".stats");
+    if (stats) {
+      new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) stats.querySelectorAll("[data-count]").forEach(countUp);
+      }, { threshold: 0.5 }).observe(stats);
+    }
   } else {
     revealTargets.forEach((el) => el.classList.add("is-visible"));
     document.querySelectorAll("[data-count]").forEach(countUp);
