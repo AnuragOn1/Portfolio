@@ -1,5 +1,7 @@
 # Anurag Merugu — Portfolio
 
+**Live:** https://anuragon1.github.io
+
 A personal portfolio site: dark theme with red accents, a full-bleed hero, and a layout that works on desktop and on phones.
 
 Built with plain **HTML, CSS and JavaScript**. There's no build step and nothing to install.
@@ -12,7 +14,7 @@ Open `index.html` in a browser. To serve it locally instead:
 python3 -m http.server 8000   # then visit http://localhost:8000
 ```
 
-To host it for free, turn on **GitHub Pages** (Settings → Pages → deploy from branch, root folder).
+It's hosted on **GitHub Pages** from the `main` branch. Anything merged into `main` goes live within a minute or two.
 
 ## Structure
 
